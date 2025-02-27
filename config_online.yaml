@@ -1,0 +1,35 @@
+pipeline: {
+  15A: {
+    path_year: '/run/user/1000/gvfs/smb-share:server=172.20.149.173,share=halm/PVCTData/',  # 监控月份变化
+    folder_name: 'EL_NG',  # 监控的目录名
+    work_dir: '/home/aiuser/workspace/data/work_dir/17A',  # 保存图片的目录
+
+    model_cfg: '/home/aiuser/workspace/mmlab/ai_file/htc_20220926/htc_r50_newdata_hs_val39.py', # 模型配置
+    checkpoint: '/home/aiuser/workspace/mmlab/ai_file/htc_20220926/epoch_130_20220926.pth', # .pth文件
+
+    rule_engine_config: '/home/aiuser/workspace/mmlab/ai_file/rule_engine_config.yaml', # 规则引擎配置文件
+
+    mes_url: 'http://10.24.6.9:18080/ai/aiMissedDetection/8/input',  # MES接口URL地址 生产
+
+    mes_eqp_id: 'DCT17A',  # 传给MES的设备名
+
+    ai_device: 'cuda:0',  # 调用哪块GPU用于AI推理
+  },
+
+  17B: {
+    path_year: '/run/user/1000/gvfs/smb-share:server=172.20.149.176,share=halm/PVCTData/',
+    folder_name: 'EL_NG',
+    work_dir: '/home/aiuser/workspace/data/work_dir/17B',  # 保存图片的目录
+
+    model_cfg: '/home/aiuser/workspace/mmlab/ai_file/htc_20220926/htc_r50_newdata_hs_val39.py', # 模型配置
+    checkpoint: '/home/aiuser/workspace/mmlab/ai_file/htc_20220926/epoch_130_20220926.pth', # .pth文件
+
+    rule_engine_config: '/home/aiuser/workspace/mmlab/ai_file/rule_engine_config.yaml',
+
+    mes_url: 'http://10.24.6.9:18080/ai/aiMissedDetection/8/input',  # MES接口URL地址 生产
+
+    mes_eqp_id: 'DCT17B',
+
+    ai_device: 'cuda:1',
+  },
+}

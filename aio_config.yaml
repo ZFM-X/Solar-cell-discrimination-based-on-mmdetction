@@ -1,0 +1,44 @@
+pipeline: {
+  01A: {
+    ip_infer_machine: '172.17.223.89', # 1线IP
+    observer_path: '\\172.17.223.86\halm\PVCTData\2024', # 监控的图像位置
+    folder_name: ['\EL_NG\', '\EL_NG108\', '\EL_NG102\'],  # 监控的目录名（路径中需包含的关键词）
+    work_dir: 'E:\01AELv3.1\processed_el',  # 保存复判图片的目录
+    work_dir_ok: 'E:\01A_OKELv3.1\processed_el', # AI2复判得到的OK片,保存至拦截的NG目录
+    filename_parser: 'halm',
+    put_ai2_ok_to_eqp_okng: true,  # 是否需要执行work_dir_ok操作，默认false
+    is_write_halm_ak_secaidata: true, # 写入mysql，AI2复判的结果
+    write_image_with_half_hour: false, # 是否半小时存图
+
+    model_cfg: 'E:\Aikosolar\02_AI_rejudication\03_AI2\A级\model\model\fab4_20240321\htc_r50_newdata_hs_val80.py', # test
+    checkpoint: 'E:\Aikosolar\02_AI_rejudication\03_AI2\A级\model\model\fab4_20240321\latest.pth',
+    rule_engine_config: 'E:\Aikosolar\02_AI_rejudication\03_AI2\A级\model\model\fab4_20240321\rule_engine_config10BBOK.yaml',
+
+    # mes_url: 'http://172.16.97.154:1230/api/label/halmbin/ai_push',  # MES接口URL地址 测试
+    mes_url: 'http://172.18.38.100:1230/api/label/halmbin/ai_push',  # MES接口URL地址 生产
+    mes_eqp_id: 'DCT01A',  # 传给MES的设备名
+
+    ai_device: 'cuda:0',  # 调用哪块GPU用于AI推理
+  },
+  01B: {
+    ip_infer_machine: '172.17.223.89',
+    observer_path: '\\172.17.223.87\halm\PVCTData\2024',
+    folder_name: ['\EL_NG\', '\EL_NG108\', '\EL_NG102\'], 
+    work_dir: 'F:\01BELv3.1\processed_el',  # 保存图片的目录
+    work_dir_ok: 'F:\01B_OKELv3.1\processed_el',
+    filename_parser: 'halm',
+    put_ai2_ok_to_eqp_okng: true, 
+    is_write_halm_ak_secaidata: true, # 写入mysql，AI2复判的结果
+    write_image_with_half_hour: false, # 是否半小时存图
+
+    model_cfg: 'D:\AI2\model\fab4_20230307\htc_r50_newdata_hs_val68.py',
+    checkpoint: 'D:\AI2\model\fab4_20230307\latest.pth',
+    rule_engine_config: 'D:\AI2\model\fab4_20230307\rule_engine_config10BB1.yaml',
+
+    # mes_url: 'http://172.16.97.154:1230/api/label/halmbin/ai_push', # 测试
+    mes_url: 'http://172.18.38.100:1230/api/label/halmbin/ai_push',  # MES接口URL地址 生产
+    mes_eqp_id: 'DCT01B',
+
+    ai_device: 'cuda:1',
+  }
+} 
