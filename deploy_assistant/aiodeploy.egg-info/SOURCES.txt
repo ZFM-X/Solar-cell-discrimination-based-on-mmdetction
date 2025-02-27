@@ -1,0 +1,6 @@
+setup.py
+aiodeploy.egg-info/PKG-INFO
+aiodeploy.egg-info/SOURCES.txt
+aiodeploy.egg-info/dependency_links.txt
+aiodeploy.egg-info/requires.txt
+aiodeploy.egg-info/top_level.txt

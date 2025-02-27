@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: aiodeploy
+Version: 1.0.0
+Summary: This is an deploy assistant Package for AI2
+Home-page: http://172.16.97.177:3000/YQ_Wang/deploy_assistant
+Author: Peter
+Author-email: wangyuqiang@aikosolar.com
+License: UNKNOWN
+Project-URL: Documentation, http://172.16.97.177:3000/YQ_Wang/deploy_assistant
+Project-URL: Source Code, http://172.16.97.177:3000/YQ_Wang/deploy_assistant
+Keywords: deploy assistant AI2
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: Python Software Foundation License
+Classifier: Programming Language :: Python :: 3.8
+
+UNKNOWN
+
