@@ -1,0 +1,1 @@
+source /home/ai_data/JW_Yue/anaconda3/etc/profile.d/conda.sh && conda info --envs && conda activate cocostuff && python /home/ai_data/JW_Yue/my_work_8c/cocoSegmentationToPngDemo.py
